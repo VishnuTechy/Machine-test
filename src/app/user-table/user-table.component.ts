@@ -28,12 +28,12 @@ export class UserTableComponent implements OnInit {
   }
   search(value: any, type: any) {
     console.log(value);
-    if ((type = 'name')) {
+    if ((type == 'name')) {
       this.filteredUsers = this.users.filter((item: any) => {
         return item.name.toLowerCase().includes(value.toLowerCase());
       });
     }
-    if ((type = 'companyname')) {
+    if ((type == 'companyname')) {
       console.log("enetered",value)
       this.filteredUsers = this.users.filter((item: any) => {
         return item.company.name
@@ -41,7 +41,7 @@ export class UserTableComponent implements OnInit {
           .includes(value.toLowerCase());
       });
     }
-    if ((type = 'designation')) {
+    if ((type == 'designation')) {
       this.filteredUsers = this.users.filter((item: any) => {
         return item.company.designation
           .toLowerCase()
