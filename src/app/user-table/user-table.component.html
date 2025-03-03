@@ -1,0 +1,22 @@
+<h1>User Table</h1>
+<table style="height: 60vh;width:50vw;align-self: center;justify-self: center;align-items: center;">
+  <thead style="background-color: aliceblue;">
+    <th>Name</th>
+    <th>Company Name</th>
+    <th>Designation</th>
+  </thead>
+
+  <tbody style="align-items: center;">
+    <tr>
+      <td><input type="text" [(ngModel)]="nameSearch" (ngModelChange)="search($event,'name')"/></td>
+      <td><input type="text" [(ngModel)]="companySearch" (ngModelChange)="search($event,'companyname')"/></td>
+      <td><input type="text" [(ngModel)]="designationSearch" (ngModelChange)="search($event,'designation')"/></td>
+    </tr>
+
+    <tr *ngFor="let item of filteredUsers" [ngStyle]="item.company.designation == 'angular Developer' ? {'background-color': '#90EE90'} :{'backgroundcolor': 'white'}">
+      <td>{{ item.name }}</td>
+      <td>{{ item.company.name }}</td>
+      <td>{{ item.company.designation }}</td>
+    </tr>
+  </tbody>
+</table>
